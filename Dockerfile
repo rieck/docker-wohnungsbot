@@ -1,19 +1,30 @@
-FROM ubuntu:trusty
-MAINTAINER Sean Payne <seantpayne+docker@gmail.com>
+FROM node AS builder
+ARG WB_VERSION=1.4.0
 
-ENV DEBIAN_FRONTEND noninteractive
+RUN cd /root && git clone https://github.com/neopostmodern/wohnungsbot --branch v$WB_VERSION && \
+    cd wohnungsbot && npm i && cp app/constants/keys.json.example app/constants/keys.json && \
+    npm run-script package-linux
 
-ADD startup.sh /startup.sh
+
+FROM ubuntu:latest
+ARG WB_VERSION=1.4.0
+
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -y && \
-    apt-get install -y git x11vnc wget python python-numpy unzip Xvfb firefox openbox geany menu && \
-    cd /root && git clone https://github.com/kanaka/noVNC.git && \
-    cd noVNC/utils && git clone https://github.com/kanaka/websockify websockify && \
-    cd /root && \
-    chmod 0755 /startup.sh && \
+    apt-get install -y git x11vnc xvfb openbox libnss3 libgbm-dev libasound2 && \
     apt-get autoclean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/*
 
-CMD /startup.sh
-EXPOSE 6080
+RUN useradd -md /app -s /bin/bash bot
+RUN cd /app && git clone https://github.com/kanaka/noVNC.git && \
+    cd /app/noVNC/utils && git clone https://github.com/kanaka/websockify websockify && \
+    mkdir /data && ln -s /app/.config/Wohnungsbot /data
+ADD startup.sh /app/startup.sh
+COPY --from=builder /root/wohnungsbot/release/Wohnungsbot-$WB_VERSION.AppImage /app/Wohnungsbot.AppImage
+RUN chmod 0755 /app/startup.sh && chown -R bot /app && chown -R bot /data
+VOLUME /data
+USER bot
+
+ENTRYPOINT /app/startup.sh
