@@ -20,7 +20,7 @@ If the bot gets stuck, press ESC to restart it.
 You can build a specific tag of [Wohnungsbot](https://github.com/neopostmodern/wohnungsbot) by using the following syntax. The data is generally automatically persisted in a docker volume, but that volume can also be named.
 
 ```
-docker build -t wohnungsbot --build-arg WG_VERSION=1.4.0 https://github.com/Wyrrrd/docker-wohnungsbot.git
+docker build -t wohnungsbot --build-arg WB_VERSION=1.4.0 https://github.com/Wyrrrd/docker-wohnungsbot.git
 docker run -td -p 6080:6080 -v wohnungsbot_data:/data wohnungsbot
 ```
 
