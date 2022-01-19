@@ -1,9 +1,7 @@
 docker-wohnungsbot
 ============
 
-## This repository is still a draft, untested, do not use!
-
-This repository packages [Wohnungsbot](https://github.com/neopostmodern/wohnungsbot) with [NoVNC](http://kanaka.github.io/noVNC/) to make to run in docker and still be able to interact with it for CAPTCHA solving.
+This repository packages [Wohnungsbot](https://github.com/neopostmodern/wohnungsbot) with [NoVNC](https://github.com/novnc/NoVNC) to make to run in docker and still be able to interact with it for CAPTCHA solving.
 
 ## How to use
 
@@ -27,5 +25,5 @@ docker run -td -p 6080:6080 -v wohnungsbot_data:/data wohnungsbot
 ## Credits
 
 * [Wohnungsbot](https://github.com/neopostmodern/wohnungsbot)
-* [NoVNC](http://kanaka.github.io/noVNC/)
+* [NoVNC](https://github.com/novnc/NoVNC)
 * [Original docker-novnc project](https://github.com/paimpozhil/docker-novnc)

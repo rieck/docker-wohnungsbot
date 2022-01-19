@@ -18,13 +18,15 @@ RUN apt-get update -y && \
     rm -rf /var/lib/apt/lists/*
 
 RUN useradd -md /app -s /bin/bash bot
-RUN cd /app && git clone https://github.com/kanaka/noVNC.git && \
+RUN cd /app && git clone https://github.com/novnc/noVNC.git && \
     cd /app/noVNC/utils && git clone https://github.com/kanaka/websockify websockify && \
-    mkdir /data && ln -s /app/.config/Wohnungsbot /data
+    mkdir /data && mkdir /app/.config && ln -s /data /app/.config/Wohnungsbot
 ADD startup.sh /app/startup.sh
 COPY --from=builder /root/wohnungsbot/release/Wohnungsbot-$WB_VERSION.AppImage /app/Wohnungsbot.AppImage
 RUN chmod 0755 /app/startup.sh && chown -R bot /app && chown -R bot /data
+
 VOLUME /data
 USER bot
+WORKDIR /app
 
 ENTRYPOINT /app/startup.sh
