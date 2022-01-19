@@ -22,6 +22,7 @@ RUN cd /app && git clone https://github.com/novnc/noVNC.git && \
     cd /app/noVNC/utils && git clone https://github.com/kanaka/websockify websockify && \
     mkdir /data && mkdir /app/.config && ln -s /data /app/.config/Wohnungsbot
 ADD startup.sh /app/startup.sh
+ADD openbox/* /app/.config/openbox/
 COPY --from=builder /root/wohnungsbot/release/Wohnungsbot-$WB_VERSION.AppImage /app/Wohnungsbot.AppImage
 RUN chmod 0755 /app/startup.sh && chown -R bot /app && chown -R bot /data
 

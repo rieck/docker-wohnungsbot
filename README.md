@@ -13,6 +13,8 @@ docker run -td -p 6080:6080 wohnungsbot
 
 The interface is then available under http://privateip:6080
 
+If the bot gets stuck, press ESC to restart it.
+
 ### Advanced use case
 
 You can build a specific tag of [Wohnungsbot](https://github.com/neopostmodern/wohnungsbot) by using the following syntax. The data is generally automatically persisted in a docker volume, but that volume can also be named.

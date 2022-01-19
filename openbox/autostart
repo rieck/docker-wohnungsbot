@@ -1,0 +1,2 @@
+# Programs that will run after Openbox has started
+~/Wohnungsbot.AppImage --appimage-extract-and-run --no-sandbox
