@@ -1,7 +1,7 @@
 docker-wohnungsbot
 ============
 
-This repository packages [Wohnungsbot](https://github.com/neopostmodern/wohnungsbot) with [NoVNC](https://github.com/novnc/NoVNC) to make to run in docker and still be able to interact with it for CAPTCHA solving.
+This repository packages [Wohnungsbot](https://github.com/neopostmodern/wohnungsbot) with [NoVNC](https://github.com/novnc/NoVNC) to make it run in docker and still be able to interact with it for CAPTCHA solving.
 
 ## How to use
 
