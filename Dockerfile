@@ -29,6 +29,7 @@ COPY --from=builder /root/wohnungsbot/resources/icon.ico /app/noVNC/favicon.ico
 COPY --from=builder /root/wohnungsbot/resources/icons/512x512.png /app/background.png
 RUN chmod 0755 /app/startup.sh && chown -R bot /app && chown -R bot /data
 
+HEALTHCHECK CMD pidof Wohnungsbot.AppImage && curl --fail http://localhost:6080/ || exit 1
 VOLUME /data
 USER bot
 WORKDIR /app
