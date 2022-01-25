@@ -109,11 +109,6 @@
             <command>/app/Wohnungsbot.AppImage --appimage-extract-and-run --no-sandbox</command>
           </action>
         </then>
-        <else>
-          <action name="Execute">
-            <command>/app/Wohnungsbot.AppImage --appimage-extract-and-run --no-sandbox</command>
-          </action>
-        </else>
       </action>
     </keybind>
   </keyboard>
