@@ -12,7 +12,7 @@ ARG WB_VERSION=1.4.0
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -y && \
-    apt-get install -y git x11vnc xvfb openbox hsetroot libnss3 libgbm-dev libasound2 && \
+    apt-get install -y git curl x11vnc xvfb openbox hsetroot libnss3 libgbm-dev libasound2 && \
     apt-get autoclean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/*
