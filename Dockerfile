@@ -20,7 +20,7 @@ RUN apt-get update -y && \
 RUN useradd -md /app -s /bin/bash bot
 RUN cd /app && git clone https://github.com/novnc/noVNC.git && \
     cd noVNC/ && cp vnc_lite.html index.html && sed -i -e 's/<title>noVNC<\/title>/<title>Wohnungsbot<\/title>\n\n    <link rel="icon" type="image\/x-icon" href="favicon.ico">/' -e "s/document\.getElementById('sendCtrlAltDelButton')//" -e 's/\.onclick = sendCtrlAltDel\;//' -e 's/<div id="sendCtrlAltDelButton">Send CtrlAltDel<\/div>//' index.html && \
-    cd utils && git clone https://github.com/kanaka/websockify websockify && \
+    cd utils && git clone https://github.com/novnc/websockify websockify && \
     mkdir /data && mkdir /app/.config && ln -s /data /app/.config/Wohnungsbot
 ADD startup.sh /app/startup.sh
 ADD openbox/* /app/.config/openbox/
