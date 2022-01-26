@@ -36,6 +36,9 @@ If you are limiting the available memory for your containers, 500m should be eno
 
 ## Credits
 
-* [Wohnungsbot](https://github.com/neopostmodern/wohnungsbot)
-* [NoVNC](https://github.com/novnc/NoVNC)
-* [Original docker-novnc project](https://github.com/paimpozhil/docker-novnc)
+This repository is licensed under [AGPL-3.0](https://github.com/Wyrrrd/docker-wohnungsbot/blob/main/LICENSE). For the projects this repository depends on, see below. 
+
+* [**Wohnungsbot**](https://github.com/neopostmodern/wohnungsbot) ([License](https://github.com/neopostmodern/wohnungsbot/blob/master/LICENSE), no modifications)
+* [**NoVNC**](https://github.com/novnc/noVNC) ([License](https://github.com/novnc/noVNC/blob/master/LICENSE.txt), vnc_lite.html modified by [replacements.sed](https://github.com/Wyrrrd/docker-wohnungsbot/blob/main/replacements.sed) during build)
+* [**Websockify**](https://github.com/novnc/websockify) ([License](https://github.com/novnc/websockify/blob/master/COPYING), no modifications)
+* [**Original docker-novnc project**](https://github.com/paimpozhil/docker-novnc) (No license included, therefore all rights reserved by the author(s), forked and heavily modified)
