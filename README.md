@@ -29,7 +29,7 @@ docker run -td -p 6080:6080 -v wohnungsbot_data:/data wohnungsbot
 You can even build a specific tag of [Wohnungsbot](https://github.com/neopostmodern/wohnungsbot) by using the following syntax. 
 
 ```
-docker build -t wohnungsbot --build-arg WB_VERSION=1.4.0 https://github.com/Wyrrrd/docker-wohnungsbot.git
+docker build -t wohnungsbot --build-arg WB_VERSION=1.5.0 https://github.com/Wyrrrd/docker-wohnungsbot.git
 ```
 
 If you are limiting the available memory for your containers, 500m should be enough. It is a GUI application after all.

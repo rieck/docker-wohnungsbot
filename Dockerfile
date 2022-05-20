@@ -1,5 +1,5 @@
 FROM node AS builder
-ARG WB_VERSION=1.4.0
+ARG WB_VERSION=1.5.0
 
 RUN cd /root && git clone https://github.com/neopostmodern/wohnungsbot --branch v$WB_VERSION && \
     cd wohnungsbot && npm i && cp app/constants/keys.json.example app/constants/keys.json && \
@@ -7,7 +7,7 @@ RUN cd /root && git clone https://github.com/neopostmodern/wohnungsbot --branch 
 
 
 FROM ubuntu:latest
-ARG WB_VERSION=1.4.0
+ARG WB_VERSION=1.5.0
 
 ENV DEBIAN_FRONTEND=noninteractive
 
