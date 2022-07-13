@@ -29,7 +29,7 @@ docker run -td -p 6080:6080 -v wohnungsbot_data:/data wohnungsbot
 You can even build a specific tag of [Wohnungsbot](https://github.com/neopostmodern/wohnungsbot) by using the following syntax. 
 
 ```
-docker build -t wohnungsbot --build-arg WB_VERSION=1.5.0 https://github.com/Wyrrrd/docker-wohnungsbot.git
+docker build -t wohnungsbot --build-arg WB_VERSION=1.6.0 https://github.com/Wyrrrd/docker-wohnungsbot.git
 ```
 
 If you are limiting the available memory for your containers, 500m should be enough. It is a GUI application after all.
@@ -42,3 +42,4 @@ This repository is licensed under [AGPL-3.0](https://github.com/Wyrrrd/docker-wo
 * [**NoVNC**](https://github.com/novnc/noVNC) ([License](https://github.com/novnc/noVNC/blob/master/LICENSE.txt), vnc_lite.html modified by [replacements.sed](https://github.com/Wyrrrd/docker-wohnungsbot/blob/main/replacements.sed) during build)
 * [**Websockify**](https://github.com/novnc/websockify) ([License](https://github.com/novnc/websockify/blob/master/COPYING), no modifications)
 * [**Original docker-novnc project**](https://github.com/paimpozhil/docker-novnc) (No license included, therefore all rights reserved by the author(s), forked basically for credits and inspiration, code widely replaced)
+* [**Ubuntu Docker Image**](https://hub.docker.com/_/ubuntu/) ([License](https://ubuntu.com/legal/intellectual-property-policy), no modifications)
