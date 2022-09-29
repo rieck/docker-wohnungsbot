@@ -1,3 +1,5 @@
+<img width="200" alt="docker-wohnungsbot logo" src="https://github.com/Wyrrrd/docker-wohnungsbot/raw/main/icon.png">
+
 docker-wohnungsbot
 ============
 
