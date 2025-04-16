@@ -1,4 +1,4 @@
-FROM node AS builder
+FROM node:21 AS builder
 ARG WB_VERSION=1.6.0
 
 RUN cd /root && git clone https://github.com/neopostmodern/wohnungsbot --branch v$WB_VERSION && \
@@ -12,7 +12,7 @@ ARG WB_VERSION=1.6.0
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -y && \
-    apt-get install -y git curl x11vnc xvfb openbox hsetroot libnss3 libgbm-dev libasound2 && \
+    apt-get install -y git curl x11vnc xvfb openbox hsetroot libnss3 libgbm-dev libasound2t64 && \
     apt-get autoclean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/*
